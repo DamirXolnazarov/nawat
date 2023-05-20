@@ -942,7 +942,7 @@ section {
     background: rgba(0, 0, 0, 0);
   }
   section .image5 .iframe iframe {
-    width: 90vh;
+    width: 100%;
     z-index: 0;
     height: 90vh;
     position: relative;
@@ -1202,7 +1202,7 @@ section {
     filter: contrast(130%);
   }
   .image5 iframe {
-    width: 500px !important;
+    width: 100% !important;
   }
 }
 @media screen and (max-width: 515px) {
