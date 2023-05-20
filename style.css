@@ -5,8 +5,8 @@
 }
 
 body {
-  overflow-x: hidden !important;
   background: rgba(4, 31, 76, 0.94);
+  overflow-x: hidden !important;
 }
 
 section {
@@ -488,6 +488,9 @@ section {
 }
 
 @media screen and (max-width: 700px) {
+  body {
+    overflow-x: hidden !important;
+  }
   section {
     display: flex;
     background: rgba(4, 31, 76, 0.94);
@@ -946,6 +949,9 @@ section {
   }
 }
 @media screen and (max-width: 580px) {
+  body {
+    overflow-x: hidden !important;
+  }
   .info2 {
     display: flex;
     width: 100%;
@@ -1200,6 +1206,9 @@ section {
   }
 }
 @media screen and (max-width: 515px) {
+  body {
+    overflow-x: hidden !important;
+  }
   .info2 .title {
     margin-left: -100px;
   }
@@ -1343,6 +1352,9 @@ section {
   }
 }
 @media screen and (max-width: 490px) {
+  body {
+    overflow-x: hidden !important;
+  }
   .info2 {
     width: 100%;
     padding: 240px 150px 240px 180px !important;
@@ -1392,6 +1404,9 @@ section {
   }
 }
 @media screen and (max-width: 430px) {
+  body {
+    overflow-x: hidden !important;
+  }
   .logo img {
     width: 70px !important;
   }
@@ -1433,6 +1448,9 @@ section {
   }
 }
 @media screen and (max-width: 410px) {
+  body {
+    overflow-x: hidden !important;
+  }
   .info4 .inputs input {
     width: 250px !important;
   }
