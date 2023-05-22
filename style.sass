@@ -4,9 +4,8 @@
     box-sizing: border-box
 $font: 'Oswald', sans-serif
 body
-    width: 100vw
     background: rgba(4, 31, 76, 0.94)
-    overflow-x: hidden !important
+    overflow: hidden !important
 section
     width: 100%
     height: 100vh
@@ -16,6 +15,41 @@ section
     background-attachment: fixed
     position: relative
     background: rgba(4, 31, 76, 0.94)
+    .burger_menu
+        width: 52.4%
+        height: 100%
+        z-index: 999 !important
+        transition: .3s
+        position: absolute
+        right: -100%
+        top: 0
+        padding: 200px 100px
+        background: #ffffff
+        ul
+            width: 500px
+            font-family: $font
+            line-height: 60px
+            text-align: center
+            height: 700px
+            li
+                text-align: center
+                list-style-type: none
+                font-size: 30px
+                cursor: pointer
+                font-weight: 400
+                &:hover
+                    color: #B0994D
+                &:nth-child(1)
+                    color: #B0994D
+        .xs
+            font-weight: 800
+            font-size: 60px
+            position: absolute !important
+            right: 20px 
+            cursor: pointer
+            top: 5px 
+.active
+    right: 0% !important
 .left
     width: 50%
     height: 100vh
@@ -23,12 +57,14 @@ section
     padding: 0
     position: relative
     .naqsh_top_left
+        pointer-events: none
         position: fixed
         left: 40px
         z-index:9999 !important
         transform: rotate(180deg)
         top: 30px
     .naqsh_bottom_left
+        pointer-events: none
         z-index: 9999 !important
         position: fixed
         left: 40px
@@ -40,15 +76,29 @@ section
     padding: 0
     width: 50%
     position: relative
+    .menu
+        width: 85px
+        position: absolute
+        background: transparent
+        top: 0
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        right: -80px
+        z-index: 999
+        height: 85px
     .naqsh_bottom_right
         z-index: 9999 !important
         position: fixed !important
         opacity: 100%
         bottom: 30px
+        pointer-events: none
         right: 130px
     .naqsh_top_right
         position: fixed !important
         top: 30px
+        pointer-events: none
         opacity: 100%
         right: 130px
         z-index: 9999 !important
@@ -111,7 +161,7 @@ section
                 li
                     color: white
                     display: flex
-                    margin: 0px 5px
+                    margin: 0px 0px
                     flex-direction: column
                     .name
                         font-weight: 400
@@ -157,7 +207,7 @@ section
                 li
                     color: white
                     display: flex
-                    margin: 0px 5px
+                    margin: 0px 0px
                     flex-direction: column
                     .name
                         font-weight: 400
@@ -346,6 +396,7 @@ section
             display: flex
             flex-direction: row
             align-items: center
+            background: transparent !important
             justify-content: center
             .main
                 width: 300px
@@ -391,9 +442,11 @@ section
     flex-direction: column
     background: rgba(4, 31, 76, 0.94)
     align-items: center
+    position: relative
     margin-right: -8px
     justify-content: space-between
     padding: 280px 0px
+
 .swiper-pagination-bullet
     width: 13px
     height: 13px
@@ -413,52 +466,77 @@ section
     display: block
     border-radius: 0 
 
+.act
+    top: 0 !important
 @media screen and (max-width: 700px) 
+    *
+        margin: 0 !important
     body
         overflow-x: hidden !important
+        background: rgba(4, 31, 76, 0.94) !important
+        overflow-y: visible !important 
     section
         display: flex
         background: rgba(4, 31, 76, 0.94)
         flex-direction: column
+        margin: auto !important
         justify-content: flex-start
         align-items: center
         width: 100%
         height: 100vh   
         background-attachment: fixed
+        position: relative
+        .burger_menu
+            width: 100%
+            height: 100%
+            top: -100%
+            transition: .3s
+            left: 0
+            background: #fff
+            position: fixed !important
+            display: flex
         .info
             &1
                 width: 100%
                 height: 100%
-                margin: 50px
+                background: transparent !important
+                margin: 50px 0px
                 padding: 240px 0px
                 display: flex
                 flex-direction: row
                 align-items: center
                 justify-content: center
+                position: relative
+                .menu
+                    top: 15px
+                    cursor: pointer
+                    right: 15px 
+                    position: absolute
+                    z-index: 99 !important
+
                 .main
-                    width: 300px
+                    width: 400px
                     height: 500px
                     display: flex
                     flex-direction: column
                     justify-content: center
                     align-items: center
                     .logo
-                        width: 180px
-                        margin-left: -50px
+                        width: 240px
                         img
                             filter: contrast(130%)
                     .sub_logo
-                        width: 400px
+                        width: 100%
                         margin-top: 20px
                         background-size: 100%
-                        height: 180px
+                        height: 250px
                         background-repeat: no-repeat
                         background-image: url('./subLogo.png') 
                         filter: contrast(130%)
                         display: flex
                         flex-direction: row
                         align-items: center
-                        padding: 15px
+                        padding-bottom: 55px
                         justify-content: center
                         span
                             font-family: $font
@@ -471,8 +549,9 @@ section
                 display: flex
                 width: 100%
                 height: 120%
-                padding: 240px 0px
+                padding: 240px 0px !important
                 flex-direction: column
+                background: transparent !important
                 align-items: center
                 position: relative
                 justify-content: center
@@ -482,13 +561,14 @@ section
                     color: white
                 ul
                     font-family: $font
-                    width: 600px
+                    width: 100%
                     transform: scale(90%)
                     li
                         color: white
                         display: flex
-                        margin: 0px 5px
+                        margin: 0px 0px
                         flex-direction: column
+                        width: 100%
                         .name
                             font-weight: 400
                             font-size: 28px
@@ -513,6 +593,7 @@ section
                         filter: contrast(130%)
             &3
                 display: flex
+                background: transparent !important
                 width: 100%
                 height: 120%
                 position: relative
@@ -526,7 +607,7 @@ section
                     color: white
                 ul
                     font-family: $font
-                    width: 600px
+                    width: 100%
                     display: flex
                     flex-direction: column
                     align-items: flex-start
@@ -535,14 +616,15 @@ section
                     transform: scale(90%)
                     li
                         color: white
+                        width: 100%
                         display: flex
-                        margin: 0px 5px
+                        margin: 0px 0px
                         flex-direction: column
                         .name
                             font-weight: 400
                             font-size: 28px
                         .description
-                            width: 500px
+                            width: 100%
                             color: #B5B5B5
                             font-weight: 100 !important
                             font-size: 18px
@@ -563,8 +645,10 @@ section
             &4
                 display: flex
                 flex-direction: column
+                background: transparent !important
                 align-items: center
-                padding: 200px 60px 240px 0px
+                width: 100%
+                padding: 200px 0px 240px 0px
                 justify-content: center
                 .title
                     font-family: $font
@@ -573,7 +657,8 @@ section
                     width: 250px
                     text-align: center
                 .main
-                    width: 500px
+                    width: 100%
+                    padding-left: 50px
                     height: 500px
                     display: flex
                     flex-direction: column
@@ -590,7 +675,7 @@ section
                             flex-direction: column
                             height: 100px
                             width: 200px
-                            margin: 0px 10px
+                            margin: 0px 0px
                             justify-content: space-between
                             text-align: left
                             align-items: flex-start
@@ -657,14 +742,14 @@ section
                                 font-size: 16px
                                 color: #9A9A9A
                                 resize: none
-                                margin: 15px
+                                margin: 0 !important
                                 font-family: Arial, Helvetica, sans-serif
                                 &:focus
                                     outline: none
                 .logo
                     position: absolute
-                    top: 150px
-                    right: 5px
+                    top: 110px
+                    right: 35px
                     img
                         width: 100px
                         filter: contrast(130%)
@@ -672,6 +757,8 @@ section
                 display: flex
                 padding: 150px 0px
                 align-items: center
+                width: 100%
+                background: transparent !important
                 flex-direction: column
                 justify-content: space-between
                 .logos
@@ -691,7 +778,7 @@ section
                     width: 250px
                     text-align: center
                 .main
-                    width: 500px
+                    width: 100%
                     height: 380px
                     display: flex
                     text-align: center
@@ -724,10 +811,10 @@ section
 
         .image
             &1
-                background: rgba(4, 31, 76, 0.94)
                 width: 100%
                 height: 100%
                 padding: 0
+                background: transparent !important
                 background-attachment: fixed
                 font-size: 18px
                 display: flex
@@ -740,10 +827,10 @@ section
                     object-position: right
                     filter: saturate(60%)
             &2
-                background: rgba(4, 31, 76, 0.94)
                 width: 100%
                 height: 100%
                 padding: 0
+                background: transparent !important
                 background-attachment: fixed
                 font-size: 18px
                 display: flex
@@ -756,9 +843,9 @@ section
                     object-position: right
                     filter: saturate(60%)
             &3
-                background: rgba(4, 31, 76, 0.94)
                 width: 100%
                 height: 100%
+                background: transparent !important
                 padding: 0
                 background-attachment: fixed
                 font-size: 18px
@@ -772,7 +859,6 @@ section
                     object-position: right
                     filter: saturate(60%)
             &6
-                background: rgba(4, 31, 76, 0.94)
                 width: 100%
                 height: 100%
                 padding: 0
@@ -788,6 +874,8 @@ section
                     object-position: right
                     filter: saturate(60%)
             &5
+                padding: 0 !important
+                width: 100%
                 .iframe
                     position: relative
                     width: 100%
@@ -807,16 +895,245 @@ section
                         z-index: 0
                         height: 90vh
                         position: relative
-@media screen and (max-width: 580px) 
-    body
-        overflow-x: hidden !important
+@media screen and ( max-width: 630px )
+    .info4
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        padding: 200px 0px 240px 0px
+        justify-content: center
+        .title
+            font-family: $font
+            font-size: 35px
+            color: white
+            width: 250px
+            text-align: center
+        .main
+            width: 100%
+            padding-left: 5px !important
+            height: 500px
+            display: flex
+            flex-direction: column
+            align-items: center
+            .datas
+                width: 100%
+                height: 100px
+                display: flex
+                flex-direction: row
+                margin-top: 40px
+                justify-content: space-between
+                .data
+                    display: flex
+                    flex-direction: column
+                    height: 100px
+                    width: 200px
+                    margin: 0px 0px
+                    justify-content: space-between
+                    text-align: left
+                    align-items: flex-start
+                    .title
+                        font-size: 28px
+                        font-family: Arial, Helvetica, sans-serif
+                        font-weight: 100
+                        filter: contrast(150%)
+                        color: #D9B64E
+                        text-align: left
+                    .info
+                        color: white
+                        text-align: center
+                        font-family: $font
+                        font-size: 35px
+                        font-weight: 400
+            .sd
+                width: 284px
+                height: 70px
+                border: none
+                cursor: pointer
+                font-family: $font
+                margin-top: 20px !important
+                font-size: 30px
+                color: white
+                background: #D9B64F
+            .inputs
+                width: 90% !important
+                height: 750px !important
+                background: transparent !important
+                display: flex
+                margin-top: 25px
+                flex-direction: column  !important
+                align-items: center
+                justify-content: space-between !important
+                .left
+                    width: 100% !important
+                    height: 50% !important
+                    background: transparent !important
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between !important
+                    input
+                        width: 100%
+                        margin: 15px 0px
+                        height: 70px !important
+                        border: none 
+                        padding: 5px
+                        background: white
+                        font-size: 15px
+                        color: #9A9A9A
+                        &:focus
+                            outline: none
+                .right
+                    width: 100% !important
+                    padding: 10px 0px
+                    height: 50% !important
+                    display: flex
+                    background: transparent !important
+                    flex-direction: column
+                    justify-content: center
+                    textarea
+                        width: 100% !important
+                        height: 100%
+                        border: none
+                        padding: 15px
+                        background: white
+                        font-size: 16px
+                        color: #9A9A9A
+                        resize: none
+                        margin: 0 !important
+                        font-family: Arial, Helvetica, sans-serif
+                        &:focus
+                            outline: none
+        .logo
+            position: absolute
+            top: 110px
+            right: 35px
+            img
+                width: 100px
+                filter: contrast(130%)
+@media screen and ( max-width: 580px )
+    .info4
+        display: flex
+        flex-direction: column
+        align-items: center
+        width: 100%
+        padding: 200px 0px 240px 0px
+        justify-content: center
+        .title
+            font-family: $font
+            font-size: 35px
+            color: white
+            width: 250px
+            text-align: center
+        .main
+            width: 100%
+            padding-left: 5px !important
+            height: 600px !important
+            display: flex
+            flex-direction: column
+            align-items: center
+            .datas
+                width: 100%
+                height: 700px !important
+                display: flex
+                flex-direction: column !important
+                margin-top: 40px
+                align-items: center !important
+                justify-content: space-between
+                .data
+                    display: flex
+                    flex-direction: column
+                    height: 100px
+                    width: 200px
+                    margin: 0px 0px
+                    justify-content: space-between
+                    text-align: center !important
+                    align-items: center !important
+
+                    .title
+                        font-size: 28px
+                        font-family: Arial, Helvetica, sans-serif
+                        font-weight: 100
+                        filter: contrast(150%)
+                        color: #D9B64E
+                        text-align: center !important
+                    .info
+                        color: white
+                        text-align: center
+                        font-family: $font
+                        font-size: 35px
+                        font-weight: 400
+            .sd
+                width: 224px !important
+                height: 70px
+                border: none
+                cursor: pointer
+                font-family: $font
+                padding: 15px
+                margin-top: 20px !important
+                font-size: 20px !important
+                color: white
+                background: #D9B64F
+            .inputs
+                width: 90% !important
+                height: 650px 
+                background: transparent !important
+                display: flex
+                margin-top: 25px
+                flex-direction: column  !important
+                align-items: center
+                justify-content: space-between
+                .left
+                    width: 100% !important
+                    height: 50% !important
+                    background: transparent !important
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-start
+                    input
+                        width: 100%
+                        margin: 15px 0px
+                        height: 70px !important
+                        border: none 
+                        padding: 5px
+                        background: white
+                        font-size: 15px
+                        color: #9A9A9A
+                        &:focus
+                            outline: none
+                .right
+                    width: 100% !important
+                    height: 50% !important
+                    display: flex
+                    background: transparent !important
+                    flex-direction: column
+                    justify-content: flex-start
+                    textarea
+                        width: 100% !important
+                        height: 100%
+                        border: none
+                        padding: 15px
+                        background: white
+                        font-size: 16px
+                        color: #9A9A9A
+                        resize: none
+                        margin: 0 !important
+                        font-family: Arial, Helvetica, sans-serif
+                        &:focus
+                            outline: none
+        .logo
+            position: absolute
+            top: 110px
+            right: 35px
+            img
+                width: 100px
+                filter: contrast(130%)
     .info2
         display: flex
         width: 100%
         height: 120%
-        padding: 270px 0px 270px 100px 
-        padding-left: 100px !important
+        padding: 240px 0px
         flex-direction: column
+        background: transparent !important
         align-items: center
         position: relative
         justify-content: center
@@ -830,10 +1147,9 @@ section
             transform: scale(90%)
             li
                 color: white
+                width: 90% !important
                 display: flex
-                width: 100%
-                flex-wrap: wrap
-                margin: 0px 5px
+                margin: 0px 0px
                 flex-direction: column
                 .name
                     font-weight: 400
@@ -843,7 +1159,7 @@ section
                         color: #D9B64F
                 .description
                     color: #B5B5B5
-                    width: 100%
+                    width: 450px !important
                     font-weight: 100 !important
                     font-size: 18px
                     filter: contrast(250%)
@@ -856,384 +1172,103 @@ section
             img
                 width: 100px
                 filter: contrast(130%)
-    .info3
-        display: flex
-        width: 100%
-        height: 120%
-        position: relative
-        padding-left: 60px !important
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        padding: 200px 0px 10px 0px
-        .title
-            font-family: $font
-            font-size: 35px
-            color: white
-        ul
-            font-family: $font
+@media screen and (max-width: 490px) 
+    .info
+        &1
             width: 100%
+            height: 100%
+            background: transparent !important
+            margin: 50px 0px
+            padding: 240px 0px
             display: flex
-            flex-direction: column
-            align-items: flex-start
-            justify-content: space-between
-            height: 500px
-            transform: scale(90%)
-            li
-                color: white
+            flex-direction: row
+            align-items: center
+            justify-content: center
+            .main
+                width: 300px !important
+                height: 500px
                 display: flex
-                margin: 0px 5px
                 flex-direction: column
-                .name
-                    font-weight: 400
-                    font-size: 28px
-                .description
+                justify-content: center
+                align-items: center
+                .logo
+                    width: 160px !important
+                    img
+                        width: 160px !important
+                        filter: contrast(130%)
+                .sub_logo
                     width: 100%
-                    color: #B5B5B5
-                    font-weight: 100 !important
-                    font-size: 18px
-                    filter: contrast(250%)
-                .link
-                    cursor: pointer
-                    color: #B0994D
-                    border-bottom: 1px solid #B0994D
-                    width: 75px
-                    padding: 5px 0px
-        .logo
-            position: absolute
-            top: 110px
-            right: 50px
-            img
-                width: 90px
-                filter: contrast(130%)
-    .info4
-        display: flex
-        flex-direction: column
-        align-items: center
-        width: 100%
-        height: 130vh
-        margin-bottom: 600px
-        padding: 200px 100px 0px 100px !important
-        justify-content: center
-        .title
-            font-family: $font
-            font-size: 35px
-            color: white
-            width: 250px
-            text-align: center
-        .main
-            width: 500px
-            height: 500px
-            display: flex
-            flex-direction: column !important
-            align-items: center
-            .datas
-                width: 100%
-                height: 150px
-                display: flex
-                flex-direction: column !important
-                margin-top: 40px
-                align-items: center
-                text-align: center
-                justify-content: space-between
-                .data
+                    margin-top: 20px
+                    background-size: 100%
+                    height: 250px
+                    background-repeat: no-repeat
+                    background-image: url('./subLogo.png') 
+                    filter: contrast(130%)
                     display: flex
-                    flex-direction: column !important
-                    text-align: center !important
-                    height: 100px
-                    width: 200px
-                    margin: 0px 25px !important
-                    justify-content: space-between
-                    align-items: center !important
-                    .title
-                        font-size: 28px
-                        font-family: Arial, Helvetica, sans-serif
-                        font-weight: 100
-                        filter: contrast(150%)
-                        color: #D9B64E
-                        text-align: center !important
-                    .info
-                        color: white
-                        text-align: center
-                        font-family: $font
-                        font-size: 35px
-                        font-weight: 400
-            .sd
-                width: 284px
-                padding: 15px
-                height: 100px
-                border: none
-                cursor: pointer
-                font-family: $font
-                margin-top: 300px !important
-                font-size: 20px !important
-                color: white
-                background: #D9B64F
-            .inputs
-                width: 100%
-                height: 750px
-                display: flex
-                margin-top: 200px !important
-                flex-direction: column !important
-                background: transparent !important
-                align-items: center
-                justify-content: space-between
-                .left
-                    width: 100% !important
-                    height: 100%
-                    display: flex
-                    flex-direction: column
+                    flex-direction: row
                     align-items: center
-                    justify-content: flex-start
-                    input
-                        width: 100%
-                        margin: 15px 0px
-                        height: 52px
-                        border: none
-                        padding: 5px
-                        background: white
-                        font-size: 15px
-                        color: #9A9A9A
-                        &:focus
-                            outline: none
-                .right
-                    width: 100% !important
-                    height: 200px !important
-                    margin-top: 50px
-                    display: flex
-                    flex-direction: column
-                    justify-content: flex-start
-                    textarea
-                        width: 100% !important
-                        height: 200px !important
-                        border: none
-                        padding: 15px
-                        background: white
-                        font-size: 16px
-                        color: #9A9A9A
-                        margin: 0 !important
-                        resize: none
-                        font-family: Arial, Helvetica, sans-serif
-                        &:focus
-                            outline: none
-        .logo
-            position: absolute
-            top: 150px
-            right: 35px !important
-            img
-                width: 100px
-                filter: contrast(130%)
-    .image5
-        iframe
-            width: 100%!important
-@media screen and ( max-width: 515px )
-    body
-        overflow-x: hidden !important
-    .info2
-        .title
-            margin-left: -100px
-    .info3
-        .title
-            margin-left: -100px
-    .info4
-        display: flex
-        flex-direction: column
-        align-items: center
-        width: 100%
-        height: 130vh
-        margin-bottom: 600px
-        padding: 200px 200px 0px 200px !important
-        justify-content: center
-        .title
-            font-family: $font
-            font-size: 35px
-            color: white
-            width: 250px
-            text-align: center
-        .main
-            width: 500px
-            height: 500px
-            display: flex
-            flex-direction: column !important
-            align-items: center
-            .datas
-                width: 100%
-                height: 150px
-                display: flex
-                flex-direction: column !important
-                margin-top: 40px
-                align-items: center
-                text-align: center
-                justify-content: space-between
-                .data
-                    display: flex
-                    flex-direction: column !important
-                    text-align: center !important
-                    height: 100px
-                    width: 200px
-                    margin: 0px 25px !important
-                    justify-content: space-between
-                    align-items: center !important
-                    .title
-                        font-size: 28px
-                        font-family: Arial, Helvetica, sans-serif
-                        font-weight: 100
-                        filter: contrast(150%)
-                        color: #D9B64E
-                        text-align: center !important
-                    .info
-                        color: white
-                        text-align: center
-                        font-family: $font
-                        font-size: 35px
-                        font-weight: 400
-            .sd
-                width: 284px
-                padding: 15px
-                height: 100px
-                border: none
-                cursor: pointer
-                font-family: $font
-                margin-top: 300px !important
-                font-size: 20px !important
-                color: white
-                background: #D9B64F
-            .inputs
-                width: 100%
-                height: 750px
-                display: flex
-                margin-top: 200px !important
-                flex-direction: column !important
-                background: transparent !important
-                align-items: center
-                justify-content: space-between
-                .left
-                    width: 400px !important
-                    height: 100%
-                    display: flex
-                    flex-direction: column
-                    align-items: center
-                    justify-content: flex-start
-                    input
-                        width: 100%
-                        margin: 15px 0px
-                        height: 52px
-                        border: none
-                        padding: 5px
-                        background: white
-                        font-size: 15px
-                        color: #9A9A9A
-                        &:focus
-                            outline: none
-                .right
-                    width: 100% !important
-                    height: 200px !important
-                    margin-top: 50px
-                    display: flex
-                    flex-direction: column
+                    padding-bottom: 110px !important
                     justify-content: center
-                    align-items: center
-                    textarea
-                        width: 400px !important
-                        height: 200px !important
-                        border: none
-                        padding: 15px
-                        background: white
-                        font-size: 16px
-                        color: #9A9A9A
-                        margin: 0 !important
-                        resize: none
-                        font-family: Arial, Helvetica, sans-serif
-                        &:focus
-                            outline: none
-        .logo
-            position: absolute
-            top: 150px
-            right: 35px !important
-            img
-                width: 100px
-                filter: contrast(130%)
-@media screen and ( max-width: 490px )
-    body
-        overflow-x: hidden !important
-    .info2
-        width: 100%
-        padding:240px  150px 240px 180px !important
-        align-items: center !important
-        justify-content: center !important
-        .title
-            margin: 0 !important
-        ul
-            width: 400px !important    
-            li
-                width: 400px !important
-                font-size: 10px !important
-                .name
-                    width: 300px !important
-                .description
-                    width: 309px !important
-    .info3
-        width: 100%
-        padding:240px  150px 240px 180px !important
-        align-items: center !important
-        justify-content: center !important
-        .title
-            margin: 0 !important
-        ul
-            width: 400px !important    
-            li
-                width: 400px !important
-                font-size: 10px !important
-                .name
-                    width: 300px !important
-                .description
-                    width: 309px !important
-                .link
-                    font-size: 15px
-@media screen and ( max-width: 430px )
-    body
-        overflow-x: hidden !important
+                    span
+                        font-family: $font
+                        text-align: center
+                        color: #D9B64E
+                        font-size: 18px !important
+                        font-weight: 400
+                        width: 250px
+        &2
+            display: flex
+            width: 100%
+            height: 120%
+            padding: 240px 0px
+            flex-direction: column
+            background: transparent !important
+            align-items: center
+            position: relative
+            justify-content: center
+            .title
+                font-family: $font
+                font-size: 35px
+                color: white
+            ul
+                font-family: $font
+                width: 100%
+                transform: scale(90%)
+                li
+                    color: white
+                    width: 90% !important
+                    display: flex
+                    margin: 0px 0px
+                    flex-direction: column
+                    .name
+                        font-weight: 400
+                        font-size: 28px
+                        .price
+                            font-size: 28px
+                            color: #D9B64F
+                    .description
+                        color: #B5B5B5
+                        width: 380px !important
+                        font-weight: 100 !important
+                        font-size: 18px
+                        filter: contrast(250%)
+                    .weight
+                        font-size: 28px
+
+            .logo
+                position: absolute
+                top: 110px
+                right: 50px
+                img
+                    width: 90px !important
+                    filter: contrast(130%)
     .logo
         img
+            width: 90px !important
+@media screen and (max-width: 420px) 
+    .logo
+        top: 15px !important
+        right: 15px !important
+        img
             width: 70px !important
-    .info1
-        display: flex !important
-        flex-direction: column !important
-        align-items: center !important
-        .main
-            display: flex !important
-            width: 100%
-            flex-direction: column !important
-            align-items: center !important
-            justify-content: center !important
-            .logo
-                width: 50px
-                margin-left: 50px !important
-                img
-                    width: 150px !important
-            .sub_logo
-                width: 270px !important
-                display: flex
-                flex-direction: row
-                align-items: center
-                justify-content: center
-                padding-bottom: 60px !important
-                span
-                    font-size: 15px !important
-    .info2
-        .title
-            margin-left: -100px !important
-    .info3
-        .title
-            margin-left: -100px !important
-@media screen and ( max-width: 410px )
-    body
-        overflow-x: hidden !important
-    .info4
-        .inputs
-            input
-                width: 250px !important
-    .info4 .main .inputs .right textarea
-        width: 250px !important
-    .sd
-        width: 200px !important
+

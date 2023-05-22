@@ -10,17 +10,17 @@ let swiper1 = new Swiper(".leftSwiper", {
     effect: 'creative',
     creativeEffect: {
       prev: {
-        // will set translateZ(-400px) on previous slides
-        translate: [0, "100%", 0],
+          // will set translateZ(-400px) on previous slides
+          translate: [0, "100%", 0],
       },
       next: {
         // will set translateX(100%) on next slides
         translate: [0, '-100%', 0],
-      },
     },
-  });
-  
-  let swiper2 = new Swiper(".rightSwiper", {
+},
+});
+
+let swiper2 = new Swiper(".rightSwiper", {
     direction: "vertical",
     slidesPerView: 1,
     spaceBetween: 0,
@@ -38,16 +38,45 @@ let swiper1 = new Swiper(".leftSwiper", {
       next: {
         // will set translateX(100%) on next slides
         translate: [0, '100%', 0],
-      },
     },
-  });
-  let section = document.querySelector('section')
-  function myFunction(x) {
+    },
+});
+let burger = document.querySelector('.menu')
+let xs = document.querySelector('.xs')
+let menu = document.querySelector('.burger_menu')
+let de = document.querySelectorAll('.ss')
+for(let i of de){
+i.onclick = () =>{
+    menu.classList.remove('active')
+    swiper1.slideTo(i.dataset.index)
+    swiper2.slideTo(i.dataset.index)
+}
+}
+let section = document.querySelector('section')
+function myFunction(x) {
     if (x.matches) { // If media query matches
+        
+         burger.onclick = () =>{
+           // menu.style.display = 'none'
+           console.log('asf');
+        }
       section.innerHTML = `
-
+      <div class="burger_menu">
+      <span class="xs">&times;</span>
+      <ul>
+          <li>НАВИГАЦИЯ</li>
+          <li class="ss" data-index="0">Главная</li>
+          <li class="ss" data-index="1">Меню</li>
+          <li class="ss" data-index="2">Новинки</li>
+          <li class="ss" data-index="3">Онлайн бронирование</li>
+          <li class="ss" data-index="4">Контакты</li>
+      </ul>
+  </div>
         <div class="info1" data-aos="zoom-in" data-aos-duration="1000">
-
+        <div class="menu">  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#fff" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </div>
             <div class="main">
                 <div class="logo">
                     <img src="./Logo.png" alt="">
@@ -97,7 +126,7 @@ let swiper1 = new Swiper(".leftSwiper", {
         <div class="image2">
             <img src="./Pitsa 1.png" alt="" data-aos='flip-right' data-aos-duration="1000">
         </div>
-        <div class="info3" data-aos="fade-left" data-aos-duration="1000">
+        <div class="info3" data-aos="fade-top" data-aos-duration="1000">
             <div class="logo"><img src="./Logo.png" alt=""></div>
             <span class="title">НОВИНКИ</span>
             <ul>
@@ -208,8 +237,19 @@ let swiper1 = new Swiper(".leftSwiper", {
             </div>
         </div>
       `
-    } else {
-    }
+      // xs.onclick = () =>{
+          //     menu.classList.remove('act')
+          // }
+        } 
+        else{
+            burger.onclick = () =>{
+                menu.classList.add('active')
+            }
+            xs.onclick = () =>{
+                menu.classList.remove('active')
+            }
+
+        }
   }
   
   var x = window.matchMedia("(max-width: 700px)")
