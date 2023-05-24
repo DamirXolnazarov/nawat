@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,7 +18,7 @@ section {
   justify-content: space-between;
   background-attachment: fixed;
   position: relative;
-  background: rgba(4, 31, 76, 0.94);
+  background: transparent !important;
 }
 section .burger_menu {
   width: 52.4%;
@@ -564,31 +565,69 @@ section .burger_menu .xs {
   }
   section {
     display: flex;
-    background: rgba(4, 31, 76, 0.94);
     flex-direction: column;
-    margin: auto !important;
     justify-content: flex-start;
+    margin: 0 !important;
     align-items: center;
     width: 100%;
     height: 100vh;
     background-attachment: fixed;
     position: relative;
   }
-  section .burger_menu {
+  section .burger_menus {
     width: 100%;
     height: 100%;
     top: -100%;
     transition: 0.3s;
+    padding-top: 200px;
+    overflow: hidden;
+    z-index: 1;
     left: 0;
     background: #fff;
     position: fixed !important;
     display: flex;
   }
+  section .burger_menus ul {
+    width: 500px;
+    font-family: "Oswald", sans-serif;
+    line-height: 60px;
+    text-align: center;
+    height: 700px;
+  }
+  section .burger_menus ul a {
+    text-decoration: none;
+  }
+  section .burger_menus ul a:nth-child(1) {
+    color: #B0994D;
+  }
+  section .burger_menus ul a:nth-child(1) li {
+    color: #B0994D;
+  }
+  section .burger_menus ul a li {
+    text-align: center;
+    list-style-type: none;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: black;
+    font-weight: 400;
+  }
+  section .burger_menus ul a li:hover {
+    color: #B0994D;
+  }
+  section .burger_menus .xss {
+    font-weight: 800;
+    font-size: 60px;
+    position: absolute !important;
+    right: 40px;
+    cursor: pointer;
+    top: 5px;
+  }
   section .info1 {
     width: 100%;
     height: 100%;
     background: transparent !important;
-    margin: 50px 0px;
+    margin: 50px 0px !important;
     padding: 240px 0px;
     display: flex;
     flex-direction: row;
@@ -596,11 +635,11 @@ section .burger_menu .xs {
     justify-content: center;
     position: relative;
   }
-  section .info1 .menu {
-    top: 15px;
+  section .info1 .menus {
     cursor: pointer;
-    right: 15px;
     position: absolute;
+    right: 15px;
+    top: -30px;
     z-index: 99 !important;
   }
   section .info1 .main {
@@ -619,7 +658,7 @@ section .burger_menu .xs {
   }
   section .info1 .main .sub_logo {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 20px !important;
     background-size: 100%;
     height: 250px;
     background-repeat: no-repeat;
@@ -663,7 +702,7 @@ section .burger_menu .xs {
   section .info2 ul li {
     color: white;
     display: flex;
-    margin: 0px 0px;
+    margin: 0px 0px !important;
     flex-direction: column;
     width: 100%;
   }
@@ -724,7 +763,7 @@ section .burger_menu .xs {
     color: white;
     width: 100%;
     display: flex;
-    margin: 0px 0px;
+    margin: 0px 0px !important;
     flex-direction: column;
   }
   section .info3 ul li .name {
@@ -783,7 +822,7 @@ section .burger_menu .xs {
     height: 100px;
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
+    margin-top: 40px !important;
     justify-content: space-between;
   }
   section .info4 .main .datas .data {
@@ -791,7 +830,7 @@ section .burger_menu .xs {
     flex-direction: column;
     height: 100px;
     width: 200px;
-    margin: 0px 0px;
+    margin: 0px 0px !important;
     justify-content: space-between;
     text-align: left;
     align-items: flex-start;
@@ -817,7 +856,7 @@ section .burger_menu .xs {
     border: none;
     cursor: pointer;
     font-family: "Oswald", sans-serif;
-    margin-top: 10px;
+    margin-top: 10px !important;
     font-size: 30px;
     color: white;
     background: #D9B64F;
@@ -826,7 +865,7 @@ section .burger_menu .xs {
     width: 100%;
     height: 250px;
     display: flex;
-    margin-top: 25px;
+    margin-top: 25px !important;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -840,7 +879,7 @@ section .burger_menu .xs {
   }
   section .info4 .main .inputs .left input {
     width: 100%;
-    margin: 15px 0px;
+    margin: 15px 0px !important;
     height: 52px;
     border: none;
     padding: 5px;
@@ -899,12 +938,12 @@ section .burger_menu .xs {
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
-    margin-top: 60px;
+    margin-top: 60px 0px 0px 0px !important;
   }
   section .info5 .title {
     font-family: "Oswald", sans-serif;
     font-size: 35px;
-    margin-bottom: 50px;
+    margin-bottom: 0px 0px 50px 0px !important;
     color: white;
     width: 250px;
     text-align: center;
@@ -1080,7 +1119,7 @@ section .burger_menu .xs {
     height: 100px;
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
+    margin-top: 40px 0px 0px 0px !important;
     justify-content: space-between;
   }
   .info4 .main .datas .data {
@@ -1088,7 +1127,7 @@ section .burger_menu .xs {
     flex-direction: column;
     height: 100px;
     width: 200px;
-    margin: 0px 0px;
+    margin: 0px 0px !important;
     justify-content: space-between;
     text-align: left;
     align-items: flex-start;
@@ -1222,7 +1261,7 @@ section .burger_menu .xs {
     flex-direction: column;
     height: 100px;
     width: 200px;
-    margin: 0px 0px;
+    margin: 0px 0px !important;
     justify-content: space-between;
     text-align: center !important;
     align-items: center !important;
@@ -1342,7 +1381,7 @@ section .burger_menu .xs {
     color: white;
     width: 90% !important;
     display: flex;
-    margin: 0px 0px;
+    margin: 0px 0px !important;
     flex-direction: column;
   }
   .info2 ul li .name {
@@ -1378,7 +1417,7 @@ section .burger_menu .xs {
     width: 100%;
     height: 100%;
     background: transparent !important;
-    margin: 50px 0px;
+    margin: 50px 0px !important;
     padding: 240px 0px;
     display: flex;
     flex-direction: row;
@@ -1402,7 +1441,7 @@ section .burger_menu .xs {
   }
   .info1 .main .sub_logo {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 20px !important;
     background-size: 100%;
     height: 250px;
     background-repeat: no-repeat;
@@ -1426,7 +1465,7 @@ section .burger_menu .xs {
     display: flex;
     width: 100%;
     height: 120%;
-    padding: 240px 0px;
+    padding: 240px 0px !important;
     flex-direction: column;
     background: transparent !important;
     align-items: center;
@@ -1447,7 +1486,7 @@ section .burger_menu .xs {
     color: white;
     width: 90% !important;
     display: flex;
-    margin: 0px 0px;
+    margin: 0px 0px !important;
     flex-direction: column;
   }
   .info2 ul li .name {
@@ -1477,16 +1516,41 @@ section .burger_menu .xs {
     width: 90px !important;
     filter: contrast(130%);
   }
-  .logo img {
-    width: 90px !important;
-  }
 }
 @media screen and (max-width: 420px) {
-  .logo {
+  .info1 .logo {
     top: 15px !important;
     right: 15px !important;
   }
-  .logo img {
-    width: 70px !important;
+  .info1 .logo img {
+    width: 80px !important;
+  }
+  .info2 .logo {
+    top: 15px !important;
+    right: 15px !important;
+  }
+  .info2 .logo img {
+    width: 80px !important;
+  }
+  .info3 .logo {
+    top: 15px !important;
+    right: 15px !important;
+  }
+  .info3 .logo img {
+    width: 80px !important;
+  }
+  .info4 .logo {
+    top: 15px !important;
+    right: 15px !important;
+  }
+  .info4 .logo img {
+    width: 80px !important;
+  }
+  .info5 .logo {
+    top: 15px !important;
+    right: 15px !important;
+  }
+  .info5 .logo img {
+    width: 80px !important;
   }
 }/*# sourceMappingURL=style.css.map */

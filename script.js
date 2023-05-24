@@ -61,19 +61,19 @@ function myFunction(x) {
            console.log('asf');
         }
       section.innerHTML = `
-      <div class="burger_menu">
-      <span class="xs">&times;</span>
+      <div class="burger_menus">
+      <span class="xss">&times;</span>
       <ul>
-          <li>НАВИГАЦИЯ</li>
-          <li class="ss" data-index="0">Главная</li>
-          <li class="ss" data-index="1">Меню</li>
-          <li class="ss" data-index="2">Новинки</li>
-          <li class="ss" data-index="3">Онлайн бронирование</li>
-          <li class="ss" data-index="4">Контакты</li>
+          <a href=''><li>НАВИГАЦИЯ</li></a>
+          <a href='#first'><li id='sss'>Главная</li></a>
+          <a href='#second'><li id='sss'>Меню</li></a>
+          <a href='#third'> <li id='sss'>Новинки</li></a>
+          <a href='#fourth'><li id='sss'>Онлайн бронирование</li></a>
+          <a href='#fifth'><li id='sss'>Контакты</li></a>
       </ul>
   </div>
-        <div class="info1" data-aos="zoom-in" data-aos-duration="1000">
-        <div class="menu">  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#fff" class="bi bi-list" viewBox="0 0 16 16">
+        <div class="info1" id='first' data-aos="zoom-in" data-aos-duration="1000">
+        <div class="menus">  <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#fff" class="bi bi-list" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
       </svg>
     </div>
@@ -87,7 +87,8 @@ function myFunction(x) {
         <div class="image1">
             <img src="./1_sm 2.png" alt="" data-aos='flip-left' data-aos-duration="1000">
         </div>
-        <div class="info2" data-aos="fade-right" data-aos-duration="1000">
+        <div class="info2" id='second' data-aos="fade-right" data-aos-duration="1000">
+        
             <div class="logo"> <img src="./Logo.png" alt=""></div>
             <span class="title">МЕНЮ</span>
             <ul>
@@ -126,7 +127,7 @@ function myFunction(x) {
         <div class="image2">
             <img src="./Pitsa 1.png" alt="" data-aos='flip-right' data-aos-duration="1000">
         </div>
-        <div class="info3" data-aos="fade-top" data-aos-duration="1000">
+        <div class="info3" id='third' data-aos="fade-top" data-aos-duration="1000">
             <div class="logo"><img src="./Logo.png" alt=""></div>
             <span class="title">НОВИНКИ</span>
             <ul>
@@ -159,7 +160,7 @@ function myFunction(x) {
         <div class="image3">
             <img src="./slide-1 1.png" alt="" data-aos='flip-up' data-aos-duration="1000">
         </div>
-        <div class="info4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="info4" id='fourth' data-aos="fade-up" data-aos-duration="1000">
         <span class="title">ОНЛАЙН БРОНИРОВАНИЕ</span>
         <div class="main">
 
@@ -199,7 +200,7 @@ function myFunction(x) {
         <div class='image6'>
         <img src='./e3fcb16ef7367a3c809cca1aa5f7d575_w1200_h630 1.png' data-aos='flip-down' data-aos-duration="1000">
         </div>
-        <div class="info5" data-aos="fade-down" data-aos-duration="1000">
+        <div class="info5" id='fifth' data-aos="fade-down" data-aos-duration="1000">
             <span class="title">
                 КОНТАКТЫ
             </span>
@@ -236,7 +237,23 @@ function myFunction(x) {
                 <iframe disabled="true" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7474.558906500907!2d69.29989493089673!3d41.27444963534953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae5ff56f231ab3%3A0xb804a270363594c7!2sRisovyy%20Bazaar!5e0!3m2!1sen!2s!4v1684375640570!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
+
       `
+      let burgers = document.querySelector('.menus')
+      let xss = document.querySelector('.xss')
+      let menus = document.querySelector('.burger_menus')
+      let lis = document.querySelectorAll('#sss')
+      for(let i of lis){
+    i.onclick=()=>{
+        menus.classList.remove('act')
+    }  
+    }
+      burgers.onclick =() =>{
+        menus.classList.add('act')
+      }
+      xss.onclick =()=>{
+        menus.classList.remove('act')
+      }
       // xs.onclick = () =>{
           //     menu.classList.remove('act')
           // }
