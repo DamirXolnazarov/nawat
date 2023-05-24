@@ -1229,6 +1229,7 @@ section .burger_menu .xs {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-bottom: 100px !important;
     padding: 200px 0px 240px 0px;
     justify-content: center;
   }
@@ -1411,6 +1412,9 @@ section .burger_menu .xs {
     width: 100px;
     filter: contrast(130%);
   }
+  .info2 {
+    margin: 100px 0px 100px 0px !important;
+  }
 }
 @media screen and (max-width: 490px) {
   .info1 {
@@ -1508,8 +1512,8 @@ section .burger_menu .xs {
     font-size: 28px;
   }
   .info2 .logo {
-    position: absolute;
-    top: 110px;
+    position: absolute !important;
+    top: 15px !important;
     right: 50px;
   }
   .info2 .logo img {
@@ -1518,36 +1522,29 @@ section .burger_menu .xs {
   }
 }
 @media screen and (max-width: 420px) {
-  .info1 .logo {
-    top: 15px !important;
-    right: 15px !important;
-  }
-  .info1 .logo img {
-    width: 80px !important;
-  }
   .info2 .logo {
-    top: 15px !important;
+    top: -30px !important;
     right: 15px !important;
   }
   .info2 .logo img {
     width: 80px !important;
   }
   .info3 .logo {
-    top: 15px !important;
+    top: 70px !important;
     right: 15px !important;
   }
   .info3 .logo img {
     width: 80px !important;
   }
   .info4 .logo {
-    top: 15px !important;
+    top: 70px !important;
     right: 15px !important;
   }
   .info4 .logo img {
     width: 80px !important;
   }
   .info5 .logo {
-    top: 15px !important;
+    top: 70px !important;
     right: 15px !important;
   }
   .info5 .logo img {
